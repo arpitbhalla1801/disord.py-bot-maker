@@ -1,5 +1,6 @@
 from tkinter import *
-def Screen1():
+import menu_select
+def Main():
     root = Tk()
     root.title('LOGIN')
     root.geometry('300x150')
@@ -16,8 +17,8 @@ def Screen1():
     def Onclick():
         print("token",inp1.get())
         
-    Login=Button(root,text="START",bg="orange",command=Onclick)
+    Login=Button(root,text="START",bg="orange",command=lambda: [root.destroy(),menu_select.offMenu()])
     Login.grid(row=3,column=1,pady=10,ipadx=20,ipady=10)
     
     root.mainloop()
-Screen1()
+Main()
